@@ -22,7 +22,6 @@
                 {block:AskEnabled}
                 <li><a href="/ask">{AskLabel}</a></li>
                 {/block:AskEnabled}
-                <li><a href="{RSS}">RSS</a></li>
             </ul>
             <form class="search" action="/search">
                 <input class="query" type="search" name="q" placeholder="Search" value="{SearchQuery}" />
@@ -151,12 +150,12 @@
                             <p>Page <strong>{CurrentPage}</strong> of <strong>{TotalPages}</strong></p>
 
                             <ul>
-                                {block:PreviousPage}
-                                <li class="backward"><a href="{PreviousPage}">Older</a></li>
-                                {/block:PreviousPage}
                                 {block:NextPage}
-                                <li class="forward"><a href="{NextPage}">Newer</a></li>
+                                <li class="backward"><a href="{NextPage}">Older</a></li>
                                 {/block:NextPage}
+                                {block:PreviousPage}
+                                <li class="forward"><a href="{PreviousPage}">Newer</a></li>
+                                {/block:PreviousPage}
                             </ul>
                         </div><!-- /#pagination -->
                     {/block:Pagination}
