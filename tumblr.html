@@ -20,7 +20,7 @@
             <ul class="navigation">
                 <li><a href="/archive">Archive</a></li>
                 {block:AskEnabled}
-                <li>{AskLabel}</li>
+                <li><a href="/ask">{AskLabel}</a></li>
                 {/block:AskEnabled}
                 <li><a href="{RSS}">RSS</a></li>
             </ul>
@@ -28,13 +28,14 @@
                 <input class="query" type="search" name="q" placeholder="Search" value="{SearchQuery}" />
                 <button type="submit">Search</button>
             </form>
-        </div>
+        </div><!-- /#hd -->
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b" id="posts">
                     {block:Posts}
+                        <div class="post">
                         {block:Text}
-                            <div class="post text">
+                            <div class="text">
                                 <article>
                                 {block:Title}
                                     <h2><a href="{Permalink}">{Title}</a></h2>
@@ -46,49 +47,48 @@
                         {/block:Text}
 
                         {block:Photo}
-                            <div class="post photo">
+                            <div class="photo">
                                 <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 
                                 {block:Caption}
-                                    <div class="caption">{Caption}</div>
+                                    <p class="caption">{Caption}</p>
                                 {/block:Caption}
                             </div>
                         {/block:Photo}
 
                         {block:Photoset}
-                            <div class="post photoset">
+                            <div class="photoset">
                                 {Photoset-500}
 
                                 {block:Caption}
-                                    <div class="caption">{Caption}</div>
+                                    <p class="caption">{Caption}</p>
                                 {/block:Caption}
                             </div>
                         {/block:Photoset}
 
                         {block:Quote}
-                            <div class="post quote">
-                                "{Quote}"
-
+                            <div class="quote">
+                                <blockquote cite="#TODO"><span class="quote">&quot;</span>{Quote}<span class="quote">&quot;</span></blockquote>
                                 {block:Source}
-                                    <div class="source">{Source}</div>
+                                    <div class="source"><cite>&mdash;{Source}</cite></div>
                                 {/block:Source}
                             </div>
                         {/block:Quote}
 
                         {block:Link}
-                            <div class="post link">
-                                <a href="{URL}" class="link" {Target}>{Name}</a>
+                            <div class="link">
+                                <h2><a href="{URL}" class="link" {Target}>{Name}</a></h2>
 
                                 {block:Description}
-                                    <div class="description">{Description}</div>
+                                    <p class="description">{Description}</p>
                                 {/block:Description}
                             </div>
                         {/block:Link}
 
                         {block:Chat}
-                            <div class="post chat">
+                            <div class="conversation">
                                 {block:Title}
-                                    <h3><a href="{Permalink}">{Title}</a></h3>
+                                    <h2><a href="{Permalink}">{Title}</a></h2>
                                 {/block:Title}
 
                                 <ul class="chat">
@@ -106,21 +106,21 @@
                         {/block:Chat}
 
                         {block:Video}
-                            <div class="post video">
+                            <div class="video">
                                 {Video-500}
 
                                 {block:Caption}
-                                    <div class="caption">{Caption}</div>
+                                    <p class="caption">{Caption}</p>
                                 {/block:Caption}
                             </div>
                         {/block:Video}
 
                         {block:Audio}
-                            <div class="post audio">
+                            <div class="audio">
                                 {AudioPlayerBlack}
 
                                 {block:Caption}
-                                    <div class="caption">{Caption}</div>
+                                    <p class="caption">{Caption}</p>
                                 {/block:Caption}
                             </div>
                         {/block:Audio}
@@ -142,41 +142,40 @@
                                     <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
                                 {/block:NoteCount}
                             </ul>
-                        </div>
+                        </div><!-- /.post-meta -->
+                    </div><!-- /.post -->
                     {/block:Posts}
                         
+                    {block:Pagination}
+                        <div id="pagination">
+                            <p>Page <strong>{CurrentPage}</strong> of <strong>{TotalPages}</strong></p>
 
-                        {block:Pagination}
-                            <div id="pagination">
-                                <p>Page <strong>{CurrentPage}</strong> of <strong>{TotalPages}</strong></p>
-
-                                <ul>
-                                    {block:PreviousPage}
-                                    <li class="backward"><a href="{PreviousPage}">Older</a></li>
-                                    {/block:PreviousPage}
-                                    {block:NextPage}
-                                    <li class="forward"><a href="{NextPage}">Newer</a></li>
-                                    {/block:NextPage}
-                                </ul>
-                            </div><!-- /#pagination -->
-                        {/block:Pagination}
-                    </div><!-- /#posts -->
-                </div>
-            </div><!-- /.bd -->
+                            <ul>
+                                {block:PreviousPage}
+                                <li class="backward"><a href="{PreviousPage}">Older</a></li>
+                                {/block:PreviousPage}
+                                {block:NextPage}
+                                <li class="forward"><a href="{NextPage}">Newer</a></li>
+                                {/block:NextPage}
+                            </ul>
+                        </div><!-- /#pagination -->
+                    {/block:Pagination}
+                    
+                </div><!-- /#posts -->
+            </div><!-- /#yui-main -->
             <div class="yui-b" id="sidebar">
                 <h1>
-                    <a href="/">
-                        {block:IfHeaderImage}<img src="{image:Header}" alt="{Title}"/>{/block:IfHeaderImage}
-                        {block:IfNotHeaderImage}{Title}{/block:IfNotHeaderImage}
-                    </a>
+                    <a href="/">{Title}</a>
                 </h1>
                 {block:Description}
                     <p class="description">{Description}</p>
                 {/block:Description}
-            </div>
-        </div>
-        <div id="ft"><a href="#TODO">Dawn Theme</a> finely crafted by <a href="http://kulor.com/?ref=dawn">Kulor</a></div>
-    </div>
+            </div><!-- /#sidebar -->
+        </div><!-- /#bd -->
+        <div id="ft">
+            <a href="#TODO">Dawn Theme</a> finely crafted by <a href="http://kulor.com/?ref=dawn">Kulor</a>
+        </div><!-- /#ft -->
+    </div><!-- /doc -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="http://static.tumblr.com/jcmmal3/283lcxl9e/html5_placeholder.js"></script>
 </body>
