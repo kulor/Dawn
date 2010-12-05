@@ -1,0 +1,456 @@
+body{
+    font-family:Georgia, serif;
+    background-color:#003251;
+    background-repeat:repeat-x;
+    background-image:url(http://static.tumblr.com/jcmmal3/yIQlcxl4z/bg_gradient.jpg);
+}
+
+
+/****************************************************
+
+    Header & Footer Related Sections
+    
+****************************************************/
+
+#hd,
+#ft
+{
+    margin-left: 13.3077em;
+}
+    
+#hd{
+    background:#001622;
+    padding:20px 30px;
+    margin-bottom:35px;
+    position:relative;
+    border:1px solid transparent;
+    border-bottom:1px solid #0B2844;
+}
+
+
+/* Search Box */
+
+#hd .search{
+    position:absolute;
+    right:30px;
+    top:20px;
+}
+
+    #hd .search button{
+        display:none;
+    }
+
+.search .query{
+    padding:3px 10px;
+    border:1px solid transparent;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.search .query
+{
+    font-size:85%;
+    font-family:Helvetica, sans-serif;
+    color:#999;
+}
+        
+
+/* Site Navigation */
+
+.navigation,
+.navigation li
+{
+    list-style:none;
+}
+
+.navigation{
+    overflow:hidden;
+}
+
+
+.navigation li{
+    float:left;
+    margin-right:30px;
+}
+
+.navigation a{
+    color:#ccc;
+    text-decoration:none;
+}
+
+.navigation a:hover,
+.navigation a:active,
+.navigation a:focus
+
+{
+    text-decoration:underline;
+}
+
+/* Site Logo & Description */
+
+#sidebar{
+    color:#fff;
+    text-align:right;
+    margin-top:25px;
+    margin-left:-74px;
+    padding-right:0px;
+    width:19em;
+    background-image:url(http://static.tumblr.com/jcmmal3/p32lcxl7e/logo_pointer.gif);
+    background-repeat:no-repeat;
+    background-position:right 0;
+}
+
+    #sidebar h1,
+    #sidebar p
+    {
+        margin-right:50px;
+    }
+    
+    #sidebar h1{
+        font-weight:bold;
+        font-size:260%;
+        letter-spacing:-0.1em;
+        line-height:0.99em;
+    }
+    
+    #sidebar p{
+        font-style:italic;
+        font-size:93%;
+        padding-left:6em;
+        margin-top:10px;
+    }
+    
+    #sidebar a{
+        color:#fff;
+        text-decoration:none;
+    }
+    
+    #sidebar a:hover,
+    #sidebar a:active,
+    #sidebar a:focus
+    {
+        text-decoration:underline;
+    }
+
+
+
+
+
+/****************************************************
+
+    Post and post container styling
+
+****************************************************/
+    
+#posts{
+    color:#666;
+    background-color:#FBFCF9;
+    text-align:center;
+    border-left:5px solid #E9FF00;
+    line-height:2.2em;
+    padding-top:80px;
+}
+
+
+/* General selectors */
+
+#posts a{
+    color:#333;
+}
+
+#posts a:hover{
+    text-decoration:none;
+    color:#666;
+}
+
+#posts strong{
+    font-weight:bold;
+}
+
+#posts h2{
+    color:#333;
+    font-size:190%;
+    margin:10px auto 20px auto;
+    line-height:1.5em;
+}
+#posts h2 a
+{
+    text-decoration:none;
+    border-bottom:1px solid #f1f1f1;
+}
+#posts h2 a:hover,
+#posts h2 a:active,
+#posts h2 a:focus
+{
+    border-color:#ccc;
+}
+
+
+#posts li:hover,
+#posts p:hover,
+#posts pre:hover,
+#posts blockquote:hover
+{
+    color:#000;
+}
+
+#posts p,
+#posts blockquote,
+#posts li,
+#posts cite,
+#posts pre
+
+{
+    font-size:93%;
+}
+
+#posts li li{
+    font-size:100%;
+}
+
+/* Individual posts */
+
+.post{
+    margin:10px;
+    margin-bottom:50px;
+    padding:0 50px 80px 50px;
+}
+
+/* Article post */
+
+.post article p,
+.post article blockquote,
+.post article pre
+{
+    text-align:left;
+}
+
+.post article code{
+    font-style:italic;
+    font-weight:bold;
+}
+
+.post article pre{
+    padding:10px 0;
+    line-height:1.8em;
+}
+
+.post article blockquote{
+    border-left:5px solid #eee;
+    padding-left:10px;
+    margin-bottom:10px;
+}
+
+.post article ul,
+.post article ol
+{
+    color:#666;
+    text-align:left;
+    margin:15px 0;
+    margin-left:15px;
+}
+
+.post article li{
+    padding-left:10px;
+}
+        
+.post article ul li{
+    list-style-type:disc;
+}
+
+.post article ul ul,
+.post article ol ol
+{
+    margin:5px 15px;
+}
+
+.post article ol li{
+    list-style-type:decimal;
+}
+    .post article ol li li{
+        list-style-type:lower-alpha;
+    }
+
+#posts .quote blockquote{
+    color:#444;
+    font-size:270%;
+    line-height:1.5em;
+    margin-bottom:10px;
+}
+
+.post .source{
+    margin-bottom:10px;
+}
+
+.post .source cite{
+    font-style:italic;
+}
+
+/* Conversations */
+
+.conversation ul{
+    width:30em;
+    margin:0 auto;
+    text-align:left;
+}
+
+.conversation .label{
+    font-weight:bold;
+}
+
+            
+/* Post meta information (date, comments etc) */
+        
+.post-meta{
+    margin:100px 0 10px 0;
+    border-bottom:1px solid #ddd;
+    font-size:85%;
+}
+
+    .post-meta .container{
+        background:#f1f1f1;
+        color:#fff;
+        width:15em;
+        margin:0 auto;
+        padding:0 20px;
+        border:1px solid #ddd;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        overflow:hidden;
+        margin-bottom:-1.2em;
+    }
+
+    .post-meta li{
+        display:inline;
+        margin:0 10px;
+    }
+
+    #posts .post-meta a{
+        color:#555;
+        text-decoration:none;
+    }
+
+        #posts .post-meta a:hover,
+        #posts .post-meta a:active,
+        #posts .post-meta a:focus
+        {
+            text-decoration:underline;
+        }
+        
+    /* Post tags */
+
+    .post-tags{
+        margin-bottom:15px;
+    }
+
+    .post-tags li{
+        display:inline;
+    }
+    
+    .post-tags a{
+        border-bottom:1px dotted #ccc;
+    }
+    #posts .post-tags a:hover,
+    .post-tags a:hover,
+    .post-tags a:active,
+    .post-tags a:focus
+    {
+        color:#000;
+        text-decoration:none;
+        border-bottom-color:#000;
+    }
+    
+    
+/****************************************************
+
+    Pagination
+
+****************************************************/
+
+#pagination{
+    width:19em;
+    margin:0 auto;
+    padding-top:80px;
+}
+
+    #pagination li{
+        float:left;
+        margin:0 10px;
+    }
+    
+    #pagination li a,
+    #pagination li span
+    {
+        display:block;
+        padding:5px 25px;
+        background:#f1f1f1;
+        border:1px solid #ddd;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+    #pagination .forward a,
+    #pagination .forward a:hover,
+    #pagination .forward a:active,
+    #pagination .forward a:focus,
+    #pagination .forward span
+    {
+        background-image:url(http://static.tumblr.com/jcmmal3/9jNlcxl88/pagination_sprite.gif);
+        padding-right:35px;
+        background-position:120% 1.3em;
+        background-repeat:no-repeat;
+    }
+    
+    #pagination .backward a,
+    #pagination .backward a:hover,
+    #pagination .backward a:active,
+    #pagination .backward a:focus,
+    #pagination .backward span
+    {
+        background-image:url(http://static.tumblr.com/jcmmal3/9jNlcxl88/pagination_sprite.gif);
+        padding-left:35px;
+        background-position:-20% 1.3em;
+        background-repeat:no-repeat;
+    }
+    
+    #pagination li span{
+        color:#ddd;
+    }
+    
+    #pagination li a:hover{
+        background:#f9f9f9;
+    }
+    
+    #pagination p{
+        font-style:italic;
+        color:#888;
+        margin:20px 0;
+    }
+    
+/****************************************************
+
+    Footer
+
+****************************************************/
+
+#ft{
+    text-align:center;
+    font-size:93%;
+    color:#fff;
+    padding-bottom:50px;
+}
+    
+    #ft a{
+        color:#fff;
+        font-style:italic;
+        text-decoration:none;
+    }
+    
+    #ft a:hover,
+    #ft a:active,
+    #ft a:focus
+    {
+        text-decoration:underline;
+    }

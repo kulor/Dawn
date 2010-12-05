@@ -2,299 +2,182 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-   <title>Dawn</title>
-   <link rel="stylesheet" href="css/reset-fonts-grids.css" type="text/css">
-   <link rel="stylesheet" href="css/dawn.css" type="text/css">
+   <title>{Title}</title>
+   <link rel="shortcut icon" href="{Favicon}">
+   <link rel="alternate" type="application/rss+xml" href="{RSS}">
+   {block:Description}
+       <meta name="description" content="{MetaDescription}" />
+   {/block:Description}
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.2r1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/pqalcxlaj/dawn_tumblr.css" type="text/css">
+   <style type="text/css">
+   {CustomCSS}
+   </style>
 </head>
 <body>
     <div id="doc2" class="yui-t1">
         <div id="hd" role="navigation">
             <ul class="navigation">
-                <li><a href="#TODO">Archive</a></li>
-                <li><a href="#TODO">Ask</a></li>
-                <li><a href="#TODO">RSS</a></li>
+                <li><a href="/archive">Archive</a></li>
+                {block:AskEnabled}
+                <li>{AskLabel}</li>
+                {/block:AskEnabled}
+                <li><a href="{RSS}">RSS</a></li>
             </ul>
             <form class="search" action="/search">
-                <input class="query" type="search" name="q" placeholder="Search" />
+                <input class="query" type="search" name="q" placeholder="Search" value="{SearchQuery}" />
                 <button type="submit">Search</button>
             </form>
         </div>
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b" id="posts">
-                    <!-- <div class="yui-g post" id="hd">
-                        <img src="http://farm5.static.flickr.com/4092/5174644832_62e96f7d88_z.jpg" alt="" />
-                        <h2>test title</h2>
-                    </div> -->
-                    
-                    <div class="post">
-                        <article>
-                            <div class="media">
-                                <iframe src="http://player.vimeo.com/video/16544905?byline=0&amp;color=FF1E19" width="500" height="281" frameborder="0"></iframe>
-                                </div>
-                            <h2>Hate/Love</h2> 
-                            <div class="source"><cite><a href="http://jonathanmoore.com/post/1518987052/hate-love">jonathanmoore</a></cite></div>
-                            <blockquote> 
-                                <blockquote> 
-                                    <p>Right now I hate/love this business. I hate/love this work. I hate/love this project. I hate/love these ideas.</p> 
-                                    <p><strong>It's all up to your and your work.</strong></p> 
-                                </blockquote> 
-                                <p>Created for the 2010 Advertising and Design Club of Canada (ADCC) Awards.  See the <a href="http://vimeo.com/16544905">full opening credits</a><em>.</em></p> 
-                                <p><em>Thanks <a href="http://twitter.com/#!/brancirkovic">Bran</a> for showing me this one.</em></p> 
-                            </blockquote>
-                         </article>
-                         
-                        <div class="post-meta">
-                            <ul class="post-tags">
-                                <li>Filed under: </li>
-                                <li><a href="#todo">#Some Tag</a></li>
-                                <li><a href="#todo">#Another Tag</a></li>
-                                <li><a href="#todo">#Another Tag</a></li>
-                                <li><a href="#todo">#Another Tag</a></li>
-                                <li><a href="#todo">#Another Tag</a></li>
-                                <li><a href="#todo">#Another Tag</a></li>
-                            </ul>
-                            <ul class="container">
-                                <li><a href="#todo" title="Dec 3 1999 - 13:44">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="quote">
-                            <blockquote cite="#TODO"><span class="quote">&quot;</span>It does not matter how slow you go so long as you do not stop.<span class="quote">&quot;</span></blockquote>
-                            <div class="source"><cite>&mdash;Wisdom of <a href="#" title="http://en.wikipedia.org/wiki/Confucius">Confucius</a></cite></div>
-                        </div>
-                        <div class="post-meta">
-                            <ul class="post-tags">
-                                <li><a href="#todo">#Some Tag</a></li>
-                                <li><a href="#todo">#Another Tag</a></li>
-                            </ul>
-                            
-                            <ul class="container">
-                                <li><a href="#todo">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="photo">
-                            <a href="#" title="http://demo.tumblr.com/photo/1280/459265350/1/tumblr_kzjlfiTnfe1qz4rgh">
-                                <img src="sample_photo.jpg" alt="" />
-                            </a>
-                            <h2><a href="#TODO">Passing through Times Square</a></h2>
-                            <p>What an incredible place, NYC</p>
-                            <cite>&mdash; <a href="#" title="http://www.mareenfischinger.com/">Mareen Fischinger</a></ctie>
-                        </div>
-                        <div class="post-meta">
-                            <ul class="post-tags">
-                                <li>Filed under: </li>
-                                <li><a href="#todo">#Some Tag</a></li>
-                            </ul>
-                            
-                            <ul class="container">
-                                <li><a href="#todo">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="post">
-                        <div class="photo">
-                            <a href="#" title="http://demo.tumblr.com/photo/1280/459265350/1/tumblr_kzjlfiTnfe1qz4rgh">
-                                <img src="sample_photo.jpg" alt="" />
-                            </a>
-                            <p>What an incredible place, NYC</p>
-                        </div>
-                        <div class="post-meta">
-                            <ul class="post-tags">
-                                <li><a href="#todo">#Some Tag</a></li>
-                            </ul>
-                            
-                            <ul class="container">
-                                <li><a href="#todo">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="post">
-                        <div class="link">
-                            <h2><a href="#" title="http://" class="link">My favorite web site</a></h2>
-                            <p>
-                                <span class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
-                            </p>
-                        </div>
-                        <div class="post-meta">
-                            <ul class="container">
-                                <li><a href="#todo">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="post">
-                        <div class="link">
-                            <h2><a href="#" title="http://" class="link">The craziest thing you will ever see on Youtube! Like seriously this should be broken into a description not just a heading!</a></h2>
-                        </div>
-                        <div class="post-meta">
-                            <ul class="post-tags">
-                                <li><a href="#todo">#Summer</a></li>
-                                <li><a href="#todo">#Trying</a></li>
-                            </ul>
-                            <ul class="container">
-                                <li><a href="#todo">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="post">
-                        <div class="link">
-                            <h2><a href="#" title="http://" class="link">Fouls</a></h2>
-                        </div>
-                        <div class="post-meta">
-                            <ul class="post-tags">
-                                <li><a href="#todo">#Music</a></li>
-                                <li><a href="#todo">#New</a></li>
-                            </ul>
-                            <ul class="container">
-                                <li><a href="#todo">Jan 25 2011</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="post">
-                        <div class="conversation">
-                            <ul>
-                                <li>
-                                    <span class="label">Jack:</span> Hey, you know what sucks?
-                                </li>
-                                <li>
-                                    <span class="label odd">Lindsey:</span> vaccuums
-                                </li>
-                                <li>
-                                    <span class="label">Jack:</span> Hey, you know what sucks in a metaphorical sense?
-                                </li>
-                                <li>
-                                    <span class="label odd">Jack:</span> Hey, you know what sucks in a metaphorical sense? With lots more information that may run over onto the next line.
-                                </li>
-                                <li>
-                                    <span class="label">Lindsey:</span> black holes
-                                </li>
-                                <li>
-                                    <span class="label odd">Jack:</span> Hey, you know what just isn't cool?
-                                </li>
-                                <li>
-                                    <span class="label">Lindsey:</span> lava?
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="post-meta">
-                            <ul class="container">
-                                <li><a href="#todo">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="audio">
-                            <script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?17"></script>
-                            <span id="audio_player_459260683">[<a href="#" title="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" target="_blank">Flash 9</a> is required to listen to audio.]</span><script type="text/javascript">
-                    replaceIfFlash(9,"audio_player_459260683",'\x3cdiv class=\x22audio_player\x22\x3e<embed type="application/x-shockwave-flash" src="http://safe.tumblr.com/swf/audio_player.swf?audio_file=http://www.tumblr.com/audio_file/459260683/tumblr_ksc4i2SkVU1qz8ouq&color=E4E4E4" height="27" width="207" quality="best"><\/embed>\x3c/div\x3e')
-                            </script>
-                            <div class="caption">
-                                <p>
-                                    <strong><a href="#" title="http://allisonweiss.tumblr.com/">Allison Weiss</a> &mdash;</strong> Fingers Crossed
-                                </p>
-                                <p>432,876 plays</p>
+                    {block:Posts}
+                        {block:Text}
+                            <div class="post text">
+                                <article>
+                                {block:Title}
+                                    <h2><a href="{Permalink}">{Title}</a></h2>
+                                {/block:Title}
+
+                                {Body}
+                                </article>
                             </div>
-                        </div>
+                        {/block:Text}
+
+                        {block:Photo}
+                            <div class="post photo">
+                                <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            </div>
+                        {/block:Photo}
+
+                        {block:Photoset}
+                            <div class="post photoset">
+                                {Photoset-500}
+
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            </div>
+                        {/block:Photoset}
+
+                        {block:Quote}
+                            <div class="post quote">
+                                "{Quote}"
+
+                                {block:Source}
+                                    <div class="source">{Source}</div>
+                                {/block:Source}
+                            </div>
+                        {/block:Quote}
+
+                        {block:Link}
+                            <div class="post link">
+                                <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                                {block:Description}
+                                    <div class="description">{Description}</div>
+                                {/block:Description}
+                            </div>
+                        {/block:Link}
+
+                        {block:Chat}
+                            <div class="post chat">
+                                {block:Title}
+                                    <h3><a href="{Permalink}">{Title}</a></h3>
+                                {/block:Title}
+
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}
+
+                                            {Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
+                            </div>
+                        {/block:Chat}
+
+                        {block:Video}
+                            <div class="post video">
+                                {Video-500}
+
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            </div>
+                        {/block:Video}
+
+                        {block:Audio}
+                            <div class="post audio">
+                                {AudioPlayerBlack}
+
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            </div>
+                        {/block:Audio}
+                        
                         <div class="post-meta">
+                            {block:HasTags}
+                                <ul class="post-tags">
+                                    <li>Filed under: </li>
+                                    {block:Tags}
+                                        <li>
+                                            <a href="{TagURL}">#{Tag}</a>
+                                        </li>
+                                    {/block:Tags}
+                                </ul>
+                            {/block:HasTags}
                             <ul class="container">
-                                <li><a href="#todo">Dec 3 1999</a></li>
-                                <li><a href="#todo">500 Notes</a></li>
-                                
+                                <li><a href="{Permalink}" title="{DayOfMonth} {Month} {Year} - {12Hour}:{Minutes}{AmPm}">{DayOfMonth}{DayOfMonthSuffix} {ShortMonth} {Year}</a></li>
+                                {block:NoteCount}
+                                    <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+                                {/block:NoteCount}
                             </ul>
-                        </div><!-- /.post-meta -->
-                    </div><!-- /.post -->
-                    
-                    <div class="post">
-                        <div class="regular">
-                            <article>
-                                <h2><a href="#" title="http://demo.tumblr.com/post/232/an-example-post">An example post</a></h2>
-                                <p>Lorem ipsum dolor sit amet, consectetuer <a href="#" title="/">adipiscing elit</a>. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id <code>libero suscipit venenatis</code>.</p>
-    <pre>
-    &lt;?php
-    function test(){
-        $foo = 'bar';
-        return $foo;
-    }
-    ?&gt;
-    </pre>
+                        </div>
+                    {/block:Posts}
+                        
+
+                        {block:Pagination}
+                            <div id="pagination">
+                                <p>Page <strong>{CurrentPage}</strong> of <strong>{TotalPages}</strong></p>
+
                                 <ul>
-                                    <li>Lorem ipsum dolor sit amet.</li>
-                                    <li>Consectetuer adipiscing elit.</li>
-                                    <li>something here
-                                        <ul>
-                                            <li>Something</li>
-                                            <li>Something else</li>
-                                        </ul>
-                                    </li>
-                                    <li>Nam at tortor quis ipsum tempor aliquet.</li>
+                                    {block:PreviousPage}
+                                    <li class="backward"><a href="{PreviousPage}">Older</a></li>
+                                    {/block:PreviousPage}
+                                    {block:NextPage}
+                                    <li class="forward"><a href="{NextPage}">Newer</a></li>
+                                    {/block:NextPage}
                                 </ul>
-                                <p>
-                                    Cum sociis <a href="#" title="/">natoque penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-                                </p>
-                                <ol>
-                                    <li>Lorem ipsum dolor sit amet.</li>
-                                    <li>Consectetuer adipiscing elit.</li>
-                                    <li>something here
-                                        <ol>
-                                            <li>Something</li>
-                                            <li>Something else</li>
-                                        </ol>
-                                    </li>
-                                    <li>Nam at tortor quis ipsum tempor aliquet.</li>
-                                </ol>
-                                <blockquote>Donec placerat mauris commodo dolor. Nulla tincidunt. Nulla vitae augue.</blockquote>
-                                <p>Suspendisse ac pede. Cras <a href="#" title="/">tincidunt pretium</a> felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque porttitor mi id felis. Maecenas nec augue. Praesent a quam pretium leo congue accumsan.</p>
-                            </article>
-                            <div class="post-meta">
-                                <ul class="container">
-                                    <li><a href="#todo">Dec 3 1999</a></li>
-                                    <li><a href="#todo">500 Notes</a></li>
-                            
-                                </ul>
-                            </div>
-                        </div><!-- /.post -->
-                        
-                        <div id="pagination">
-                            <p>Page <strong>1</strong> of <strong>2</strong></p>
-                            <ul>
-                                <li class="backward"><span>Older</span></li>
-                                <li class="forward"><a href="#TODO">Newer</a></li>
-                            </ul>
-                        </div><!-- /#pagination -->
-                        
+                            </div><!-- /#pagination -->
+                        {/block:Pagination}
                     </div><!-- /#posts -->
                 </div>
             </div><!-- /.bd -->
             <div class="yui-b" id="sidebar">
-                <h1><a href="/">Dawn</a></h1>
-                <p>A Tumblr Theme</p>
+                <h1>
+                    <a href="/">
+                        {block:IfHeaderImage}<img src="{image:Header}" alt="{Title}"/>{/block:IfHeaderImage}
+                        {block:IfNotHeaderImage}{Title}{/block:IfNotHeaderImage}
+                    </a>
+                </h1>
+                {block:Description}
+                    <p class="description">{Description}</p>
+                {/block:Description}
             </div>
         </div>
         <div id="ft"><a href="#TODO">Dawn Theme</a> finely crafted by <a href="http://kulor.com/?ref=dawn">Kulor</a></div>
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="js/html5_placeholder.js"></script>
+    <script type="text/javascript" src="http://static.tumblr.com/jcmmal3/283lcxl9e/html5_placeholder.js"></script>
 </body>
 </html>
