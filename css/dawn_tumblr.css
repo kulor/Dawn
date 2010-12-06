@@ -372,8 +372,12 @@ body{
 #pagination{
     width:19em;
     margin:0 auto;
-    padding-top:80px;
+    padding-bottom:60px;
 }
+
+    #pagination ul{
+        overflow:hidden;
+    }
 
     #pagination li{
         float:left;
@@ -439,7 +443,7 @@ body{
     text-align:center;
     font-size:93%;
     color:#fff;
-    padding-bottom:50px;
+    padding:50px 0;
 }
     
     #ft a{
