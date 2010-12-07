@@ -9,7 +9,7 @@
        <meta name="description" content="{MetaDescription}" />
    {/block:Description}
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.2r1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-   <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/pqalcxlaj/dawn_tumblr.css" type="text/css">
+   <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/g7Fld1vm0/dawn_tumblr.css" type="text/css">
    <style type="text/css">
    {CustomCSS}
    </style>
@@ -48,7 +48,9 @@
                         {block:Photo}
                             <div class="photo">
                                 <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-
+                                {block:Title}
+                                    <h2><a href="{Permalink}">{Title}</a></h2>
+                                {/block:Title}
                                 {block:Caption}
                                     <p class="caption">{Caption}</p>
                                 {/block:Caption}
