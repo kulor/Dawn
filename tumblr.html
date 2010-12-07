@@ -9,9 +9,17 @@
        <meta name="description" content="{MetaDescription}" />
    {/block:Description}
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.2r1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-   <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/g7Fld1vm0/dawn_tumblr.css" type="text/css">
+   <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/jGbld1xcf/dawn_tumblr.css" type="text/css">
    <style type="text/css">
    {CustomCSS}
+   .notes .tumblelog_{ReblogParentName}{
+       background:#f1f1f1;
+       padding:4px 8px;
+       border:1px solid #ddd;
+       -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+       border-radius: 8px;
+   }
    </style>
 </head>
 <body>
@@ -125,6 +133,8 @@
                                 {/block:Caption}
                             </div>
                         {/block:Audio}
+                        
+                        {PostNotes}
                         
                         <div class="post-meta">
                             {block:HasTags}
