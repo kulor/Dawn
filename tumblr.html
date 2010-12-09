@@ -9,7 +9,7 @@
        <meta name="description" content="{MetaDescription}" />
    {/block:Description}
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.2r1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-   <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/jGbld1xcf/dawn_tumblr.css" type="text/css">
+   <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/mWyld6nel/dawn_tumblr.css" type="text/css">
    <style type="text/css">
    {CustomCSS}
    .notes .tumblelog_{ReblogParentName}{
@@ -21,6 +21,28 @@
        border-radius: 8px;
    }
    </style>
+    <!--[if lte IE 7]>
+    <style>
+    .post-meta{
+    padding-right:18.05em;
+    }
+    .post-meta .container{
+    position:absolute;
+    margin-top:-1.4em
+
+    }
+    #sidebar{
+    margin-left:-79px;
+    }
+    </style>
+    <![endif]-->
+    <!--[if eq IE 8]>
+    <style>
+    #sidebar{
+    margin-left:-75px;
+    }
+    </style>
+    <![endif]-->  
 </head>
 <body>
     <div id="doc2" class="yui-t1">
@@ -39,8 +61,17 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b" id="posts">
+                    {block:NoSearchResults}
+                    <div class="post">
+                    <h2>No Results for "{SearchQuery}"</h2>
+                    </div><!-- .post -->
+                    {/block:NoSearchResults}
+                    {block:SearchPage}
+                    {SearchPage}
+                    {/block:SearchPage}
                     {block:Posts}
                         <div class="post">
+                        
                         {block:Text}
                             <div class="text">
                                 <article>
@@ -135,7 +166,7 @@
                         {/block:Audio}
                         
                         {PostNotes}
-                        
+                        {block:Date}
                         <div class="post-meta">
                             {block:HasTags}
                                 <ul class="post-tags">
@@ -154,6 +185,7 @@
                                 {/block:NoteCount}
                             </ul>
                         </div><!-- /.post-meta -->
+                        {/block:Date}
                     </div><!-- /.post -->
                     {/block:Posts}
                         

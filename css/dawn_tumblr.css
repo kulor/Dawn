@@ -3,6 +3,9 @@ body{
     background-color:#003251;
     background-repeat:repeat-x;
     background-image:url(http://static.tumblr.com/jcmmal3/yIQlcxl4z/bg_gradient.jpg);
+    height:auto !important;
+    height:515px;
+    min-height:515px;
 }
 
 html{
