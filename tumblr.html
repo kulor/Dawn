@@ -8,6 +8,7 @@
    {block:Description}
        <meta name="description" content="{MetaDescription}" />
    {/block:Description}
+   <meta name="image:Logo" content=""/>
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.2r1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
    <link rel="stylesheet" href="http://static.tumblr.com/jcmmal3/mWyld6nel/dawn_tumblr.css" type="text/css">
    <style type="text/css">
@@ -52,6 +53,11 @@
                 {block:AskEnabled}
                 <li><a href="/ask">{AskLabel}</a></li>
                 {/block:AskEnabled}
+                {block:HasPages}
+                {block:Pages}
+                <li><a href="{URL}">{Label}</a></li>
+                {/block:Pages}
+                {/block:HasPages}
             </ul>
             <form class="search" action="/search">
                 <input class="query" type="search" name="q" placeholder="Search" value="{SearchQuery}" />
@@ -86,7 +92,10 @@
 
                         {block:Photo}
                             <div class="photo">
-                                <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                                {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                                {block:HighRes}
+                                <p>View <a href="{PhotoURL-HighRes}">full size</a></p>
+                                {/block:HighRes}
                                 {block:Title}
                                     <h2><a href="{Permalink}">{Title}</a></h2>
                                 {/block:Title}
@@ -108,7 +117,7 @@
 
                         {block:Quote}
                             <div class="quote">
-                                <blockquote cite="#TODO"><span class="quote">&quot;</span>{Quote}<span class="quote">&quot;</span></blockquote>
+                                <blockquote><span class="quote">&quot;</span>{Quote}<span class="quote">&quot;</span></blockquote>
                                 {block:Source}
                                     <div class="source"><cite>&mdash;{Source}</cite></div>
                                 {/block:Source}
@@ -208,7 +217,8 @@
             </div><!-- /#yui-main -->
             <div class="yui-b" id="sidebar">
                 <h1>
-                    <a href="/">{Title}</a>
+                    {block:IfLogoImage}<a href="/"><img src="{image:Logo}"/></a>{/block:IfLogoImage}
+                    {block:IfNotLogoImage}<a href="/">{Title}</a>{/block:IfNotLogoImage}
                 </h1>
                 {block:Description}
                     <p class="description">{Description}</p>
@@ -216,7 +226,7 @@
             </div><!-- /#sidebar -->
         </div><!-- /#bd -->
         <div id="ft">
-            <a href="#TODO">Dawn Theme</a> finely crafted by <a href="http://kulor.com/?ref=dawn">Kulor</a>
+            <a href="http://github.com/kulor/Dawn">Dawn Theme</a> finely crafted by <a href="http://kulor.com/?ref=dawn">Kulor</a>
         </div><!-- /#ft -->
     </div><!-- /doc -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
